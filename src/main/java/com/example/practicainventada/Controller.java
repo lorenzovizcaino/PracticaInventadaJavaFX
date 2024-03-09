@@ -7,6 +7,7 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -14,8 +15,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -29,12 +33,17 @@ public class Controller implements Initializable {
 
     @FXML
     private Button btnGuardar;
+    @FXML
+    private Button btnBorrar;
+
 
     @FXML
     private Button btnPonerEstilo;
 
     @FXML
     private Button btnQuitarEstilo;
+    @FXML
+    private Button btnEnviar;
 
     @FXML
     private CheckBox chLeer;
@@ -88,6 +97,45 @@ public class Controller implements Initializable {
     String sexo="";
 
     @FXML
+    void Enviar(ActionEvent event) throws IOException {
+        //Con las siguientes lineas comentadas nos valdria solo para abrir una segunda ventana
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("view2.fxml"));
+//        Scene scene = new Scene(loader.load());
+//        Stage stage=new Stage();
+//        stage.setTitle("Practica");
+//        stage.initModality(Modality.APPLICATION_MODAL);
+//        stage.setScene(scene);
+//        stage.showAndWait();
+
+
+
+        Persona persona=tblTabla.getSelectionModel().getSelectedItem(); //recogo la persona selecionada
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view2.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage=new Stage();
+        stage.setTitle("Practica");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+
+        Controller2 controller2=loader.getController();
+        controller2.MostrarDatos(persona);
+        stage.showAndWait();
+
+
+
+    }
+
+
+    @FXML
+    void Borrar(ActionEvent event) {
+        Persona persona=tblTabla.getSelectionModel().getSelectedItem();
+        listaPersonas.remove(persona);
+        tblTabla.setItems(listaPersonas);
+
+
+    }
+
+    @FXML
     void Guardar(ActionEvent event) {
         hobiesSelecionados=new ArrayList<>();
         String nombre=tfNombre.getText();
@@ -99,6 +147,7 @@ public class Controller implements Initializable {
         }
         Random random=new Random();
         int r= random.nextInt(4)+1;
+
         switch(r){
             case 1:
                 url=ruta1;
@@ -190,6 +239,23 @@ public class Controller implements Initializable {
                 ivFoto.setImage(new Image(t1.getUrlFoto()));
             }
         });
+
+        //ESTO NO ES DE ESTE EJERCICIO. ES COMO GUARDAR LOS MULTIPLES ITEMS SELECIONADOS DE UNA TABLA
+//        tvTable.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<Ingrediente>() {
+//            @Override
+//            public void onChanged(Change<? extends Ingrediente> change) {
+//                while (change.next()) {
+//                    if (change.wasAdded()) {
+//                        ingredientesSelecionados.addAll(change.getAddedSubList());
+//                    }
+//                    if (change.wasRemoved()) {
+//                        ingredientesSelecionados.removeAll(change.getRemoved());
+//                    }
+//                }
+//
+//
+//            }
+//        });
 
 
     }

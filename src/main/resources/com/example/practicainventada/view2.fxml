@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="598.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicainventada.Controller2">
+   <children>
+      <Label layoutX="114.0" layoutY="98.0" prefHeight="28.0" prefWidth="80.0" text="Nombre" />
+      <Label layoutX="114.0" layoutY="153.0" prefHeight="28.0" prefWidth="80.0" text="Sexo" />
+      <Label layoutX="114.0" layoutY="199.0" prefHeight="28.0" prefWidth="80.0" text="Edad" />
+      <TextField fx:id="tfNombre" layoutX="223.0" layoutY="98.0" prefHeight="28.0" prefWidth="325.0" />
+      <TextField fx:id="tfSexo" layoutX="223.0" layoutY="153.0" prefHeight="28.0" prefWidth="325.0" />
+      <TextField fx:id="tfEdad" layoutX="223.0" layoutY="199.0" prefHeight="28.0" prefWidth="325.0" />
+      <CheckBox fx:id="chLeer" layoutX="610.0" layoutY="159.0" mnemonicParsing="false" text="Leer" />
+      <CheckBox fx:id="chViajar" layoutX="610.0" layoutY="200.0" mnemonicParsing="false" text="Viajar" />
+      <CheckBox fx:id="chPlanchar" layoutX="610.0" layoutY="242.0" mnemonicParsing="false" text="Planchar" />
+      <Label layoutX="607.0" layoutY="104.0" text="Hobies">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="251.0" prefHeight="28.0" prefWidth="80.0" text="Foto" />
+      <ImageView fx:id="ivFoto" fitHeight="305.0" fitWidth="325.0" layoutX="223.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
