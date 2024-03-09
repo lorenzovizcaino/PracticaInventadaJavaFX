@@ -1,0 +1,46 @@
+/*Estilo para aplicar a todos los elementos de la aplicación*/
+.root{
+    -fx-background-color:#0AE0F5;
+    -fx-font-family:"serif";
+    -fx-font-size: 18px;
+
+
+
+
+}
+#lbtitulo { -fx-font-family: "Berlin Sans FB";
+         -fx-font-style: italic;
+         -fx-font-size: 36px;
+
+         -fx-underline:boolean;
+
+}
+
+
+
+
+
+Button { -fx-background-color: #25D90C;
+         -fx-border-color:#FC1A04;
+         -fx-border-width: 2;
+         -fx-font-family: "Comic Sans MS";
+         -fx-font-style: italic;
+         -fx-font-size: 15px;
+         -fx-background-radius: 10 10 10 10;
+         -fx-border-radius: 10 10 10 10;
+}
+
+Button:hover {
+        -fx-background-color: #F4FC04;
+        -fx-font-size: 20px;
+}
+
+Button:pressed {
+    -fx-background-color: #FC042A;
+
+	-fx-font-weight: bold;
+}
+
+
+
+
