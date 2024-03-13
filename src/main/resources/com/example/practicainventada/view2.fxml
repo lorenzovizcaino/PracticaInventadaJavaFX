@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="598.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicainventada.Controller2">
+<AnchorPane prefHeight="598.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicainventada.Controller2">
    <children>
       <Label layoutX="114.0" layoutY="98.0" prefHeight="28.0" prefWidth="80.0" text="Nombre" />
       <Label layoutX="114.0" layoutY="153.0" prefHeight="28.0" prefWidth="80.0" text="Sexo" />

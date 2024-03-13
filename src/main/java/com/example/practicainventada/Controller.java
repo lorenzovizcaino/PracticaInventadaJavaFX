@@ -181,6 +181,7 @@ public class Controller implements Initializable {
         Scene scene = anchorPane.getScene();
         try {
             scene.getStylesheets().clear();
+
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style/estilo.css")).toExternalForm());
         } catch (Exception e) {
             System.out.println("no lo encuentro");
@@ -201,6 +202,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         listaSexos= FXCollections.observableArrayList(
                 "Varon",
                     "Mujer"
@@ -218,6 +220,8 @@ public class Controller implements Initializable {
                 lbEdad.setText(String.valueOf(edad));
             }
         });
+
+
 
         chbSexo.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -241,6 +245,13 @@ public class Controller implements Initializable {
         });
 
         //ESTO NO ES DE ESTE EJERCICIO. ES COMO GUARDAR LOS MULTIPLES ITEMS SELECIONADOS DE UNA TABLA
+
+//        colIngredientes.setCellValueFactory(new PropertyValueFactory("nombre"));
+//        colPrecio.setCellValueFactory(new PropertyValueFactory("precio"));
+//
+//        tvTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//        tvTable.setItems(listaIngredientes);
+
 //        tvTable.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<Ingrediente>() {
 //            @Override
 //            public void onChanged(Change<? extends Ingrediente> change) {
@@ -256,6 +267,29 @@ public class Controller implements Initializable {
 //
 //            }
 //        });
+
+
+        //otra manera de hacerlo, Modo profesora
+        //        tablaIngredientes
+//                .getSelectionModel()
+//                .selectedItemProperty()
+//                .addListener(new ChangeListener<Ingredientes> () {
+//                    @Override
+//                    public void changed(ObservableValue<? extends Ingredientes> observableValue, Ingredientes oldIngrediente, Ingredientes newIngrediente) {
+//
+//                        ingredienteSeleccionado=tablaIngredientes.getSelectionModel ().getSelectedItems ();
+//                        for (Ingredientes i:ingredienteSeleccionado)
+//                            System.out.println (i.getDescripcion () + "-" + i.getPrecio () );
+//                        //Esto solo funciona si se selecciona un ingrediente, no varios
+//                        //System.out.println ("Nuevo ingrediente" + newIngrediente.getDescripcion () );
+//                       // System.out.println ("Nuevo precio" +newIngrediente.getPrecio () );
+//
+//
+//
+//
+//
+//                    }
+//                });
 
 
     }
